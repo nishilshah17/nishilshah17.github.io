@@ -13,8 +13,8 @@ body {
 }
 
 .cloud {
-	width: 200px; height: 60px;
-	background: #fff;
+	<!--width: 200px; height: 60px;
+	background: #fff;-->
 	
 	border-radius: 200px;
 	-moz-border-radius: 200px;
@@ -27,7 +27,7 @@ body {
 	content: '';
 	position: absolute; 
 	background: #fff;
-	width: 100px; height: 80px;
+	<!--width: 100px; height: 80px;-->
 	position: absolute; top: -15px; left: 10px;
 	
 	border-radius: 100px;
@@ -40,7 +40,7 @@ body {
 }
 
 .cloud:after {
-	width: 120px; height: 120px;
+	<!--width: 120px; height: 120px;-->
 	top: -55px; left: auto; right: 15px;
 }
 
