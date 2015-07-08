@@ -1,0 +1,34 @@
+#left {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 75%;
+  float: left;
+}
+
+#right {
+  width: 25%;
+  height: inherit;
+  float: right;
+}
+
+#name {
+  width: 100%;
+  height: 50%;
+  position: relative;
+  top: 45%;
+  transform:translate(0,75%);
+  font-size: 100px;
+}
+
+#social-media {
+  padding-top: 5%;
+}
+
+.customFont {
+  font-family: 'Sarala', sans-serif;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26px;
+}
