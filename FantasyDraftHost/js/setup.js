@@ -28,6 +28,7 @@ $('#submitButton').click(function () {
   var teams = [];
   var owners = [];
   var phones = [];
+  var uid = localStorage.getItem('uid');
 
   for(var i = 0; i < numTeams; i++) {
     teams.push($('#team'+(i+1)).val());
@@ -71,7 +72,8 @@ $('#submitButton').click(function () {
     rounds: numRounds,
     teams: numTeams,
     picks: allPicks,
-    timePerPick: timeLimit
+    timePerPick: timeLimit,
+    userID: uid
   });
 
   messageOwners(phones);

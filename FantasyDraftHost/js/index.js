@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  var uid;
 
   $('#signin').click(function() {
     var ref = new Firebase("https://fantasy-draft-host.firebaseio.com");
@@ -8,8 +7,8 @@ $(document).ready(function() {
         console.log("Login Failed!", error);
       } else {
         console.log("Authenticated successfully with payload:", authData);
-        uid = authData.uid;
-        document.getElementById('#afterAuth').style.zIndex = 1000;
+        localStorage.setItem('uid',authData.uid);
+        document.getElementById('afterAuth').style.zIndex = 1000;
       }
     });
   });
