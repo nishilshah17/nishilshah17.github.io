@@ -80,7 +80,7 @@ $('#submitButton').click(function () {
 
   var draftID = newDraftRef.key();
   $('#setupBody').empty();
-  $('#setupBody').append('<div class="draftID">please note your draft id: <br/>'+draftID+'</div>');
+  $('#setupBody').append('<div class="draftID">draft set up successfully</div>');
   $('#setupBody').append('<input type="submit" value="home" class="home-flat-button" onclick=window.location.href="index.html" />');
 });
 
