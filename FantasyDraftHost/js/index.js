@@ -1,7 +1,7 @@
 $(document).ready(function() {
-
+  alert(localStorage.getItem('uid'));
   if(localStorage.getItem('uid') != null) {
-    alert("hello")
+    alert("hello");
     authorized();
   } else {
     document.getElementById('afterAuth').style.zIndex = -1000;
