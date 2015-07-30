@@ -48,11 +48,11 @@ $(document).ready(function() {
       }
     });
 
-    var niceReference = new Firebase("https://fantasy-draft-host.firebaseio.com/drafts/-JvVge1VBPPsYZgOYvbj");
+    var niceReference = new Firebase("https://fantasy-draft-host.firebaseio.com/users/24124124");
 
     niceReference.once('value', function(dataSnapshot){
-      var rounds = dataSnapshot.child('rounds').val();
-      alert(rounds);
+      var displayName = dataSnapshot.child('displayName').val();
+      alert(displayName);
     });
 
   }
