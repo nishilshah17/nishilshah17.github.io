@@ -48,14 +48,11 @@ $(document).ready(function() {
       }
     });
 
-    var ref = new Firebase("https://fantasy-draft-host.firebaseio.com");
-    var authData = ref.getAuth();
+    var niceReference = new Firebase("https://fantasy-draft-host.firebaseio.com/drafts/-JvVge1VBPPsYZgOYvbj");
 
-    if (authData) {
-      alert("User " + authData.uid + " is logged in with " + authData.provider);
-    } else {
-      alert("User is logged out");
-    }
+    niceReference.update({
+      rounds: "lolz"
+    });
 
   }
 

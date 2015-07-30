@@ -32,15 +32,6 @@ var authToken;
 var twilioNumber;
 
 $(document).ready(function() {
-  var ref = new Firebase("https://fantasy-draft-host.firebaseio.com");
-  var authData = ref.getAuth();
-
-  if (authData) {
-    alert("User " + authData.uid + " is logged in with " + authData.provider);
-  } else {
-    alert("User is logged out");
-  }
-
   var pickCounter;
   var teams, owners, phones;
   var players, playerTeams, playerPositions;
