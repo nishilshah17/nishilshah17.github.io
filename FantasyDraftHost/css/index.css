@@ -21,6 +21,8 @@ body {
 #signout {
   float: right;
   margin-right: 1em;
+  cursor: pointer;
+  cursor: hand;
 }
 
 #afterAuth {
