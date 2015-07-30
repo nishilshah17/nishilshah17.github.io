@@ -5,6 +5,9 @@ $(document).ready(function() {
     authorized();
   }
 
+  var ref = new Firebase("https://fantasy-draft-host.firebaseio.com");
+  var authData = ref.getAuth();
+
   $('#signin').click(function() {
     var ref = new Firebase("https://fantasy-draft-host.firebaseio.com");
     ref.authWithOAuthPopup("google", function(error, authData) {
@@ -41,12 +44,18 @@ $(document).ready(function() {
       var authToken = userSnapshot.child('authToken').val();
       var number = userSnapshot.child('number').val();
 
-      if(accountSID == null || authToken == null || number == null) {
+      if(accountSID == null || accountSID == "" || authToken == null || authToken == "" || number == null || number == "") {
         document.getElementById('twilioNotSet').style.visibility = 'visible';
         document.getElementById('setup').disabled = true;
         document.getElementById('start').disabled = true;
       }
     });
+
+    if (authData) {
+      alert("User " + authData.uid + " is logged in with " + authData.provider);
+    } else {
+      alert("User is logged out");
+    }
   }
 
 });
