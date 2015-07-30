@@ -1,8 +1,9 @@
 $(document).ready(function() {
-  alert(localStorage.getItem('uid'));
+  alert(localStorage.getItem('uid').length);
   if(localStorage.getItem('uid') == null) {
     console.log("not authorized");
   } else {
+    alert("authorized");
     authorized();
   }
 
