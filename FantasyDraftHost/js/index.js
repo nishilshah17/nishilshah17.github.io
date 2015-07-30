@@ -48,7 +48,7 @@ $(document).ready(function() {
       }
     });
 
-    var niceReference = new Firebase("https://fantasy-draft-host.firebaseio.com/users/google:101748172284825807958");
+    var niceReference = new Firebase("https://fantasy-draft-host.firebaseio.com/users/24124124");
 
     niceReference.once('value', function(dataSnapshot){
       alert("getting here");
