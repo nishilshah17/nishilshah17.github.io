@@ -3,6 +3,7 @@ var countdown;
 var draftActive = false;
 var timePerPick;
 var currentPick;
+var userID;
 
 //data that needs to be cached
 var playerData;
@@ -30,6 +31,18 @@ $(document).ready(function() {
   var teams, owners, phones;
   var players, playerTeams, playerPositions;
   var numRounds;
+  userID = localStorage.getItem('uid');
+  alert(userID);
+
+  var draftsRef = new Firebase("https://fantasy-draft-host.firebaseio.com/drafts");
+
+  draftsRef.once('value', function(draftsSnapshot) {
+    draftsSnapshot.forEach(function(draftSnapshot) {
+      if(draftsSnapshot.child('uid').val() == userID) {
+        alert(userID);
+      }
+    });
+  });
 
   $('#draftIDSubmit').click(function() {
     draftActive = true;
