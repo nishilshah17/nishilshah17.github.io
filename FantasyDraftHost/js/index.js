@@ -27,9 +27,8 @@ $(document).ready(function() {
   });
 
   $('#signout').click(function() {
-    localStorage.setItem('uid',null);
-    localStorage.setItem('displayName',null);
-    localStorage.setItem('ref',null);
+    localStorage.removeItem('uid');
+    localStorage.removeItem('displayName');
     document.getElementById('afterAuth').style.zIndex = -1000;
     location.reload(true);
   });
