@@ -27,6 +27,7 @@ $(document).ready(function() {
     localStorage.setItem('uid',null);
     localStorage.setItem('displayName',null);
     localStorage.setItem('ref',null);
+    document.getElementById('afterAuth').style.zIndex = -1000;
     location.reload(true);
   });
 
