@@ -3,7 +3,6 @@ $(document).ready(function() {
   if(localStorage.getItem('uid') != null) {
     authorized();
   }
-  alert(localStorage.getItem('uid'));
 
   $('#signin').click(function() {
     var ref = new Firebase("https://fantasy-draft-host.firebaseio.com");
@@ -28,7 +27,9 @@ $(document).ready(function() {
   $('#signout').click(function() {
     var ref = localStorage.getItem('ref');
     ref.unauth();
+    alert(localStorage.getItem('uid'));
     localStorage.setItem('uid',null);
+    alert(localStorage.getItem('uid'));
     localStorage.setItem('displayName',null);
     localStorage.setItem('ref',null);
   });
