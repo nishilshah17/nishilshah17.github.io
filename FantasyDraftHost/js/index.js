@@ -50,8 +50,9 @@ $(document).ready(function() {
 
     var niceReference = new Firebase("https://fantasy-draft-host.firebaseio.com/drafts/-JvVge1VBPPsYZgOYvbj");
 
-    niceReference.update({
-      rounds: "lolz"
+    niceReference.once('value', function(dataSnapshot){
+      var rounds = dataSnapshot.child('rounds').val();
+      alert(rounds);
     });
 
   }
