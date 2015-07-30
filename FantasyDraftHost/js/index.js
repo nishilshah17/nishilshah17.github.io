@@ -1,7 +1,10 @@
 $(document).ready(function() {
 
   if(localStorage.getItem('uid') != null) {
+    alert("hello")
     authorized();
+  } else {
+    document.getElementById('afterAuth').style.zIndex = -1000;
   }
 
   $('#signin').click(function() {
