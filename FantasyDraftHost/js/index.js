@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  if(localStorage.getItem('uid').length > 0) {
+  if(localStorage.getItem('uid').length > 0 && localStorage.getItem('uid') != null) {
     authorized();
   }
 
