@@ -5,9 +5,6 @@ $(document).ready(function() {
     authorized();
   }
 
-  var ref = new Firebase("https://fantasy-draft-host.firebaseio.com");
-  var authData = ref.getAuth();
-
   $('#signin').click(function() {
     var ref = new Firebase("https://fantasy-draft-host.firebaseio.com");
     ref.authWithOAuthPopup("google", function(error, authData) {
@@ -51,11 +48,15 @@ $(document).ready(function() {
       }
     });
 
+    var ref = new Firebase("https://fantasy-draft-host.firebaseio.com");
+    var authData = ref.getAuth();
+
     if (authData) {
       alert("User " + authData.uid + " is logged in with " + authData.provider);
     } else {
       alert("User is logged out");
     }
+
   }
 
 });
