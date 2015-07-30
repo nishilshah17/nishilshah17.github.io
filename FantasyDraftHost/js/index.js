@@ -1,10 +1,9 @@
 $(document).ready(function() {
   alert(localStorage.getItem('uid'));
-  if(localStorage.getItem('uid') != null) {
-    alert("hello");
-    authorized();
+  if(localStorage.getItem('uid') === null) {
+    console.log("not authorized");
   } else {
-    document.getElementById('afterAuth').style.zIndex = -1000;
+    authorized();
   }
 
   $('#signin').click(function() {
