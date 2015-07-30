@@ -18,18 +18,13 @@ $(document).ready(function() {
         });
         localStorage.setItem('uid',authData.uid);
         localStorage.setItem('displayName',authData.google.displayName);
-        localStorage.setItem('ref',ref);
         authorized();
       }
     });
   });
 
   $('#signout').click(function() {
-    var ref = localStorage.getItem('ref');
-    ref.unauth();
-    alert(localStorage.getItem('uid'));
     localStorage.setItem('uid',null);
-    alert(localStorage.getItem('uid'));
     localStorage.setItem('displayName',null);
     localStorage.setItem('ref',null);
   });
