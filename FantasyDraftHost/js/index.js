@@ -27,6 +27,7 @@ $(document).ready(function() {
     localStorage.setItem('uid',null);
     localStorage.setItem('displayName',null);
     localStorage.setItem('ref',null);
+    location.reload(true);
   });
 
   function authorized() {
