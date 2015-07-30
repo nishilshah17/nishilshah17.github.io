@@ -3,6 +3,7 @@ $(document).ready(function() {
   if(localStorage.getItem('uid').length > 0 && localStorage.getItem('uid') != null) {
     authorized();
   }
+  alert(localStorage.getItem('uid'));
 
   $('#signin').click(function() {
     var ref = new Firebase("https://fantasy-draft-host.firebaseio.com");
@@ -18,9 +19,18 @@ $(document).ready(function() {
         });
         localStorage.setItem('uid',authData.uid);
         localStorage.setItem('displayName',authData.google.displayName);
+        localStorage.setItem('ref',ref);
         authorized();
       }
     });
+  });
+
+  $('#signout').click(function() {
+    var ref = localStorage.getItem('ref');
+    ref.unauth();
+    localStorage.setItem('uid',null);
+    localStorage.setItem('displayName',null);
+    localStorage.setItem('ref',null);
   });
 
   function authorized() {
