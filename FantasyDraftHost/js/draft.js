@@ -267,7 +267,7 @@ function nextPick(teams, owners, phones, players, playerTeams, playerPositions) 
   var draftTable = document.getElementById('draftTable');
 
   var counter = 0;
-  videoReadyToPlay = false;
+  videoReadyToPlay = true;
   while(players[counter] != "null" && counter < players.length) {
     counter++;
   }
@@ -342,16 +342,19 @@ function announcePick() {
 }
 
 function playPlayerHighlightReel() {
-  videoReadyToPlay = true;
   var HTMLvideo = document.getElementById('playerHighlightReel');
   HTMLvideo.addEventListener('ended',videoEnded,false);
-  HTMLvideo.play();
-  document.getElementById('playerHighlights').style.zIndex = 4000;
+  if(videoReadyToPlay) {
+    HTMLvideo.play();
+    document.getElementById('playerHighlights').style.zIndex = 4000;
+  } else {
+    setTimeout(initiateCountdown, 1750);
+  }
 }
 
 $("video").on("error", function() {
-  if(draftActive && videoReadyToPlay) {
-    setTimeout(initiateCountdown,1750);
+  if(draftActive) {
+    videoReadyToPlay = false;
   }
 })
 
