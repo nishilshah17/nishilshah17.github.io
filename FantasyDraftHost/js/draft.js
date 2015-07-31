@@ -4,6 +4,7 @@ var draftActive = false;
 var timePerPick;
 var currentPick;
 var userID;
+var videoReadyToPlay;
 
 //data that needs to be cached
 var playerData;
@@ -266,6 +267,7 @@ function nextPick(teams, owners, phones, players, playerTeams, playerPositions) 
   var draftTable = document.getElementById('draftTable');
 
   var counter = 0;
+  videoReadyToPlay = false;
   while(players[counter] != "null" && counter < players.length) {
     counter++;
   }
@@ -284,6 +286,9 @@ function nextPick(teams, owners, phones, players, playerTeams, playerPositions) 
     toppp.push(players[counter-1]);
     toppp.push(playerTeams[counter-1]);
     toppp.push(playerPositions[counter-1]);
+    var source = 'videos/'+toppp[2].replace(/\s+/g, '')+'.mp4';
+    $('#playerHighlightReel').attr('src',source);
+    $('#playerHighlightReel').attr('preload','auto');
     responsiveVoice.speak("The pick is in", "UK English Male",{onstart: nothing, onend: pauseForTeam});
   } else {
     setTimeout(initiateCountdown,3000);
@@ -337,19 +342,15 @@ function announcePick() {
 }
 
 function playPlayerHighlightReel() {
-  var source = 'videos/'+toppp[2].replace(/\s+/g, '')+'.mp4';
-  $('#playerHighlightReel').attr('src',source);
+  videoReadyToPlay = true;
   var HTMLvideo = document.getElementById('playerHighlightReel');
   HTMLvideo.addEventListener('ended',videoEnded,false);
-
-  HTMLvideo.addEventListener("loadedmetadata", function() {
-    HTMLvideo.play();
-    document.getElementById('playerHighlights').style.zIndex = 4000;
-  });
+  HTMLvideo.play();
+  document.getElementById('playerHighlights').style.zIndex = 4000;
 }
 
 $("video").on("error", function() {
-  if(draftActive) {
+  if(draftActive && videoReadyToPlay) {
     setTimeout(initiateCountdown,1750);
   }
 })
