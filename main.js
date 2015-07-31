@@ -21,4 +21,8 @@ $(document).ready(function(){
       $('#'+portfolioItem).css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0},1000);
     }, (i+1)*300, pI);
   }
+
+  $('.portfolioItem').click(function() {
+    window.open($(this).data('link'),'_blank');
+  });
 });
