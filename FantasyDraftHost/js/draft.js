@@ -342,7 +342,6 @@ function announcePick() {
 }
 
 function playPlayerHighlightReel() {
-  alert(videoReadyToPlay);
   var HTMLvideo = document.getElementById('playerHighlightReel');
   HTMLvideo.addEventListener('ended',videoEnded,false);
   if(videoReadyToPlay) {
