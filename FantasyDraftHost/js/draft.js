@@ -42,7 +42,6 @@ $(document).ready(function() {
   var userRef = new Firebase("https://fantasy-draft-host.firebaseio.com/users/"+userID);
 
   draftsRef.once('value', function(draftsSnapshot) {
-
     $('#draftList').empty();
     var draftListTable = $("<table cellpadding='25'></table>");
     draftListTable.attr('id','draftListTable');
@@ -73,7 +72,8 @@ $(document).ready(function() {
   });
 
   $('#draftList').on('click','input', function() {
-    document.getElementById('draftList').style.zIndex = -2125125;
+    document.getElementById('draftList').style.position = "fixed";
+    document.getElementById('draftList').style.zIndex = -2125;
 
     draftActive = true;
     loadPlayerData();

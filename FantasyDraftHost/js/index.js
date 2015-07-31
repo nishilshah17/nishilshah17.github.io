@@ -48,14 +48,6 @@ $(document).ready(function() {
       }
     });
 
-    var niceReference = new Firebase("https://fantasy-draft-host.firebaseio.com/users/24124124");
-
-    niceReference.once('value', function(dataSnapshot){
-      alert("getting here");
-      var displayName = dataSnapshot.child('displayName').val();
-      alert(displayName);
-    });
-
   }
 
 });
