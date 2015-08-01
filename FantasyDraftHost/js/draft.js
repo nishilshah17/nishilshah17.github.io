@@ -161,6 +161,7 @@ $(document).ready(function() {
               cell = $('<th bgcolor="'+positionColor+'" id="'+pickCounter+'"><b>'+players[pickCounter-1]+'</b><br/>'+currentOwner+'</th>');
             }
           }
+          rowCells.push(cell);
         }
         alert(rowCells);
         row.append(rowCells[0]);
