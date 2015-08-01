@@ -110,8 +110,8 @@ $(document).ready(function() {
         if(teamCounter == limit) {
           return true;
         }
-      });
-    }); */
+      }); */
+    });
 
     draftRef.on("value", function(draftSnapshot) {
       pickCounter = 0;
@@ -167,12 +167,10 @@ $(document).ready(function() {
         row.append(rowCells[0]);
         if(y % 2 == 0) {
           for (var i = 1; i < rowCells.length; i++) {
-            alert(i);
             row.append(rowCells[i]);
           }
         } else {
           for (var i = rowCells.length-1; i > 0; i--) {
-            alert(i);
             row.append(rowCells[i]);
           }
         }
