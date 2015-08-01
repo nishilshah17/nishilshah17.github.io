@@ -91,7 +91,7 @@ $(document).ready(function() {
         teamCounter++;
         var teamPhone = pick.child('phone').val();
 
-        $.ajax({
+      /*  $.ajax({
           url: 'https://api.twilio.com/2010-04-01/Accounts/'+accountSID+'/Messages.json',
           type: 'post',
           dataType: 'json',
@@ -111,7 +111,7 @@ $(document).ready(function() {
           return true;
         }
       });
-    });
+    }); */
 
     draftRef.on("value", function(draftSnapshot) {
       pickCounter = 0;
