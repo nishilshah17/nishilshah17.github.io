@@ -87,7 +87,7 @@ $(document).ready(function() {
       var limit = parseInt(draftSnapshot.child('teams').val());
 
       var picksSnapshot = draftSnapshot.child('picks');
-      /*picksSnapshot.forEach(function(pick) {
+      picksSnapshot.forEach(function(pick) {
         teamCounter++;
         var teamPhone = pick.child('phone').val();
 
@@ -110,7 +110,7 @@ $(document).ready(function() {
         if(teamCounter == limit) {
           return true;
         }
-      }); */
+      });
     });
 
     draftRef.on("value", function(draftSnapshot) {
@@ -163,7 +163,7 @@ $(document).ready(function() {
           }
           rowCells.push(cell);
         }
-        alert(rowCells);
+
         row.append(rowCells[0]);
         if(y % 2 == 0) {
           for (var i = 1; i < rowCells.length; i++) {
