@@ -6,6 +6,7 @@ var timePerPick;
 var currentPick;
 var userID;
 var videoReadyToPlay;
+var firstInstance = true;
 
 //data that needs to be cached
 var playerData;
@@ -287,7 +288,7 @@ function nextPick(teams, owners, phones, players, playerTeams, playerPositions) 
   }
   currentPick = counter+1;
 
-  if(counter > 0) {
+  if(counter > 0 && !firstInstance) {
     if(counter == players.length) {
       draftActive = false;
       lastPick = true;
@@ -306,6 +307,7 @@ function nextPick(teams, owners, phones, players, playerTeams, playerPositions) 
     $('#playerHighlightReel').attr('preload','auto');
     responsiveVoice.speak("The pick is in", "UK English Male",{onstart: nothing, onend: pauseForTeam});
   } else {
+    firstInstance = false;
     setTimeout(initiateCountdown,3000);
   }
   if(counter < players.length) {
