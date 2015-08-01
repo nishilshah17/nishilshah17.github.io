@@ -323,7 +323,7 @@ function nextPick(teams, owners, phones, players, playerTeams, playerPositions) 
     } else {
       firstMessageID = 0;
     }
-    checkMessages();
+    checkMessages(false);
   }
 }
 
@@ -434,7 +434,7 @@ function checkMessages(timeIsOut) {
   if(repeat && !timeIsOut) {
     setTimeout(checkMessages,4000,timeIsOut);
   }
-  if(timeIsOut) {
+  if(repeat && timeIsOut) {
     var pickRef = new Firebase("https://fantasy-draft-host.firebaseio.com/drafts/"+draftID+"/picks/"+currentPick);
     pickRef.update({
       player: "No One",
