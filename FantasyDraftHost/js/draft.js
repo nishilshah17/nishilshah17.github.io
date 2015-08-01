@@ -145,6 +145,7 @@ $(document).ready(function() {
       for(var y = 0; y < numRounds; y++) {
         var row = $("<tr></tr>");
         row.attr('id','round'+(y+1));
+        var rowCells = [];
 
         for(var x = 0; x < (teams.length/numRounds)+1; x++) {
           var cell;
@@ -160,7 +161,16 @@ $(document).ready(function() {
               cell = $('<th bgcolor="'+positionColor+'" id="'+pickCounter+'"><b>'+players[pickCounter-1]+'</b><br/>'+currentOwner+'</th>');
             }
           }
-          row.append(cell);
+        }
+        row.append(rowCells[0]);
+        if(y % 2 == 0) {
+          for (var i = 1; i < rowCells.length; i++) {
+            row.append(rowCells[i]);
+          }
+        } else {
+          for (var i = rowCells.length-1; i > 0; i--) {
+            row.append(rowCells[i]);
+          }
         }
         table.append(row);
       }
