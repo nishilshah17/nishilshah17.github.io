@@ -87,11 +87,11 @@ $(document).ready(function() {
       var limit = parseInt(draftSnapshot.child('teams').val());
 
       var picksSnapshot = draftSnapshot.child('picks');
-      picksSnapshot.forEach(function(pick) {
+      /*picksSnapshot.forEach(function(pick) {
         teamCounter++;
         var teamPhone = pick.child('phone').val();
 
-      /*  $.ajax({
+        $.ajax({
           url: 'https://api.twilio.com/2010-04-01/Accounts/'+accountSID+'/Messages.json',
           type: 'post',
           dataType: 'json',
