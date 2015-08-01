@@ -5,6 +5,7 @@ var timePerPick;
 var currentPick;
 var userID;
 var videoReadyToPlay;
+var lastPick;
 
 //data that needs to be cached
 var playerData;
@@ -288,6 +289,7 @@ function nextPick(teams, owners, phones, players, playerTeams, playerPositions) 
   if(counter > 0) {
     if(counter == players.length) {
       draftActive = false;
+      lastPick = true;
     }
     toppp = [];
     pauseCountdown();
@@ -365,7 +367,7 @@ function playPlayerHighlightReel() {
 }
 
 $("video").on("error", function() {
-  if(draftActive) {
+  if(draftActive || lastPick) {
     videoReadyToPlay = false;
   }
 })
