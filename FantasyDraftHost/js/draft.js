@@ -162,13 +162,16 @@ $(document).ready(function() {
             }
           }
         }
+        alert(rowCells);
         row.append(rowCells[0]);
         if(y % 2 == 0) {
           for (var i = 1; i < rowCells.length; i++) {
+            alert(i);
             row.append(rowCells[i]);
           }
         } else {
           for (var i = rowCells.length-1; i > 0; i--) {
+            alert(i);
             row.append(rowCells[i]);
           }
         }
