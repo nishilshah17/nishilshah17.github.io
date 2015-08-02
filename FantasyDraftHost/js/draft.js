@@ -243,7 +243,7 @@ function initiateCountdown() {
   countdown.pause();
   ping.play();
 
-  setTimeout(showCountdown,250);
+  setTimeout(resumeCountdown,250);
 }
 
 function showCountdown() {
@@ -252,11 +252,6 @@ function showCountdown() {
 
 function stopAlarm() {
   alarm.pause();
-}
-
-function showCountdown() {
-  document.getElementById('timer').style.zIndex = 1000;
-  countdown.start(timePerPick);
 }
 
 function resumeCountdown() {
