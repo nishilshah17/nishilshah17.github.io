@@ -255,6 +255,7 @@ function stopAlarm() {
 }
 
 function resumeCountdown() {
+  document.getElementById('timer').style.zIndex = 1000;
   countdown.start($('#countdown_clock').val());
 }
 
