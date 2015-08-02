@@ -228,6 +228,7 @@ function initiateCountdown() {
       },
       complete: function () {
         ticking.pause();
+        ticking.currentTime = 0;
         alarm.play();
         setTimeout(stopAlarm, 4500);
 
