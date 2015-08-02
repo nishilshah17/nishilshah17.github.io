@@ -126,9 +126,8 @@ $(document).ready(function() {
       playerPositions = [];
 
       numRounds = draftSnapshot.child('rounds').val();
-      var numPicks = draftSnapshot.child('picks').numChildren();
+      numPicks = draftSnapshot.child('picks').numChildren();
       timePerPick = draftSnapshot.child('timePerPick').val();
-      numPicks = players.length;
 
       var counter = 0;
       draftSnapshot.child('picks').forEach(function(pickSnapshot) {
