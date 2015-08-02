@@ -288,6 +288,7 @@ function nextPick(teams, owners, phones, players, playerTeams, playerPositions) 
     counter++;
   }
   currentPick = counter+1;
+  alert(currentPick);
 
   if(counter > 0 && !firstInstance) {
     if(counter == players.length) {
