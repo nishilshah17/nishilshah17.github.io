@@ -313,7 +313,7 @@ function nextPick(teams, owners, phones, players, playerTeams, playerPositions) 
     var source = 'videos/'+toppp[2].replace(/\s+/g, '')+'.mp4';
     $('#playerHighlightReel').attr('src',source);
     $('#playerHighlightReel').attr('preload','auto');
-    responsiveVoice.speak("The pick is in", "UK English Male",{onstart: nothing, onend: pauseForTeam});
+    responsiveVoice.speak("The pick is in", "UK English Male",{onstart: null, onend: pauseForTeam});
   } else if(currentPick < (players.length + 1)){
     firstInstance = false;
     setTimeout(initiateCountdown,3000);
@@ -352,7 +352,7 @@ function pauseForTeam() {
 }
 
 function announceTeam() {
-  responsiveVoice.speak(toppp[0]+" selects ", "UK English Male", {onstart: nothing, onend: announcePick});
+  responsiveVoice.speak(toppp[0]+" selects ", "UK English Male", {onstart: null, onend: announcePick});
 }
 
 function announcePick() {
@@ -549,9 +549,6 @@ function getPositionColor(position) {
     default:
       return "FFFF91";
   }
-}
-
-function nothing() {
 }
 
 function make_base_auth(user, password) {

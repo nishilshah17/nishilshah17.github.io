@@ -15,8 +15,7 @@ $(document).ready(function() {
   var players, playerTeams, playerPositions;
   var numRounds, numPicks;
   draftActive = true;
-  //viewDraftID = localStorage.getItem('viewDraftID');
-  viewDraftID = "-Jveurq8YFonG5KGrGWc";
+  viewDraftID = localStorage.getItem('viewDraftID');
   console.log(viewDraftID);
 
   var draftRef = new Firebase("https://fantasy-draft-host.firebaseio.com/drafts/"+viewDraftID);

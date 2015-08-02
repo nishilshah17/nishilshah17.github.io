@@ -1,4 +1,4 @@
-.start-draft-flat-button {
+.view-draft-flat-button {
   position: relative;
   display: block;
   width: 100%;
@@ -16,7 +16,7 @@
   box-shadow: inset 0 -2px #12ab8d;
 }
 
-.start-draft-flat-button:active {
+.view-draft-flat-button:active {
   top: 1px;
   outline: none;
   -webkit-box-shadow: none;
