@@ -288,9 +288,8 @@ function nextPick(teams, owners, phones, players, playerTeams, playerPositions) 
     counter++;
   }
   currentPick = counter+1;
-  alert(currentPick);
 
-  if(counter > 0 && !firstInstance) {
+  if(counter > 0 && !firstInstance && currentPick < (players.length + 1)) {
     if(counter == players.length) {
       draftActive = false;
       lastPick = true;
