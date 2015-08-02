@@ -204,6 +204,7 @@ $(document).ready(function() {
 });
 
 function initiateCountdown() {
+  alert("countdown initiated");
 
   ticking = new Audio("audio/ticking.wav");
   alarm = new Audio("audio/alarm.wav");
@@ -408,47 +409,49 @@ function updateMessageData() {
 function checkMessages(timeIsOut) {
   updateMessageData();
   var repeat;
-  if(messageData.messages.length > 0) {
-    currentMessageID = messageData.messages[0].sid;
-  } else {
-    currentMessageID = 0;
-  }
-
-  for(var i = 0; i < messageData.messages.length; i++) {
-    if(messageData.messages[i].sid == firstMessageID) {
-      repeat = true;
-      break;
+  if(currentPick < players.length + 1) {
+    if(messageData.messages.length > 0) {
+      currentMessageID = messageData.messages[0].sid;
+    } else {
+      currentMessageID = 0;
     }
-    var fromPhone = messageData.messages[i].from;
-    fromPhone = fromPhone.substring(2); //remove the +1 from the phone number
-    var playerPicked = messageData.messages[i].body;
-    if(fromPhone == currentPhone && validPlayer(playerPicked, messageData.messages[i].sid)) {
-      repeat = false;
+
+    for(var i = 0; i < messageData.messages.length; i++) {
+      if(messageData.messages[i].sid == firstMessageID) {
+        repeat = true;
+        break;
+      }
+      var fromPhone = messageData.messages[i].from;
+      fromPhone = fromPhone.substring(2); //remove the +1 from the phone number
+      var playerPicked = messageData.messages[i].body;
+      if(fromPhone == currentPhone && validPlayer(playerPicked, messageData.messages[i].sid)) {
+        repeat = false;
+        var pickRef = new Firebase("https://fantasy-draft-host.firebaseio.com/drafts/"+draftID+"/picks/"+currentPick);
+        pickRef.update({
+          owner: currentOwner,
+          team: currentTeam,
+          phone: currentPhone,
+          player: pickedPlayer,
+          playerTeam: pickedPlayerTeam,
+          playerPosition: pickedPlayerPosition
+        });
+        break;
+      } else {
+        repeat = true;
+      }
+    }
+
+    if(repeat && !timeIsOut) {
+      setTimeout(checkMessages,4000,timeIsOut);
+    }
+    if(repeat && timeIsOut) {
       var pickRef = new Firebase("https://fantasy-draft-host.firebaseio.com/drafts/"+draftID+"/picks/"+currentPick);
       pickRef.update({
-        owner: currentOwner,
-        team: currentTeam,
-        phone: currentPhone,
-        player: pickedPlayer,
-        playerTeam: pickedPlayerTeam,
-        playerPosition: pickedPlayerPosition
+        player: "No One",
+        playerTeam: "Timed Out",
+        playerPosition: "null"
       });
-      break;
-    } else {
-      repeat = true;
     }
-  }
-
-  if(repeat && !timeIsOut) {
-    setTimeout(checkMessages,4000,timeIsOut);
-  }
-  if(repeat && timeIsOut) {
-    var pickRef = new Firebase("https://fantasy-draft-host.firebaseio.com/drafts/"+draftID+"/picks/"+currentPick);
-    pickRef.update({
-      player: "No One",
-      playerTeam: "Timed Out",
-      playerPosition: "null"
-    });
   }
 }
 
