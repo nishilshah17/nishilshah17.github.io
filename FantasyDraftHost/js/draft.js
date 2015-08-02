@@ -87,6 +87,10 @@ $(document).ready(function() {
     draftID = $(this).data('id');
     var draftRef = new Firebase("https://fantasy-draft-host.firebaseio.com/drafts/"+draftID);
 
+    draftRef.update({
+      active: "true"
+    });
+
     draftRef.once("value", function(draftSnapshot) {
       var teamCounter = 0;
       var limit = parseInt(draftSnapshot.child('teams').val());
@@ -203,6 +207,13 @@ $(document).ready(function() {
       $('#timerButton').val("pause");
       resumeCountdown();
     }
+  });
+
+  $(window).on('beforeunload', function() {
+    var draftRef = new Firebase("https://fantasy-draft-host.firebaseio.com/drafts/"+draftID);
+    draftRef.update({
+      active: "false"
+    });
   });
 });
 
