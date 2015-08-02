@@ -7,6 +7,7 @@ var currentPick;
 var userID;
 var videoReadyToPlay;
 var firstInstance = true;
+var numPicks;
 
 //data that needs to be cached
 var playerData;
@@ -127,6 +128,7 @@ $(document).ready(function() {
       numRounds = draftSnapshot.child('rounds').val();
       var numPicks = draftSnapshot.child('picks').numChildren();
       timePerPick = draftSnapshot.child('timePerPick').val();
+      numPicks = players.length;
 
       var counter = 0;
       draftSnapshot.child('picks').forEach(function(pickSnapshot) {
@@ -412,7 +414,7 @@ function updateMessageData() {
 function checkMessages(timeIsOut) {
   updateMessageData();
   var repeat;
-  if(currentPick < players.length + 1) {
+  if(currentPick < numPicks + 1) {
     if(messageData.messages.length > 0) {
       currentMessageID = messageData.messages[0].sid;
     } else {
