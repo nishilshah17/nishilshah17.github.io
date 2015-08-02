@@ -1,10 +1,10 @@
 var draftID;
+var userID;
 var countdown;
 var draftActive = false;
 var lastPick = false;
 var timePerPick;
 var currentPick;
-var userID;
 var videoReadyToPlay;
 var firstInstance = true;
 var numPicks;
@@ -34,6 +34,8 @@ var pickedPlayerPosition;
 var accountSID;
 var authToken;
 var twilioNumber;
+
+var toppp; //stands for teams, owners, phones, players playerTeams, playerPositions
 
 $(document).ready(function() {
   var pickCounter;
@@ -272,8 +274,6 @@ function pauseCountdown() {
   ticking.pause();
   alarm.pause();
 }
-
-var toppp;
 
 function nextPick(teams, owners, phones, players, playerTeams, playerPositions) {
 
