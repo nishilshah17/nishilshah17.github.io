@@ -208,10 +208,6 @@ $(document).ready(function() {
 
 function initiateCountdown() {
 
-  ticking = new Audio("audio/ticking.wav");
-  alarm = new Audio("audio/alarm.wav");
-  ping = new Audio("audio/ping.mp3");
-
   countdown = Tock({
       countdown: true,
       interval: 50,
@@ -253,6 +249,7 @@ function showCountdown() {
 
 function stopAlarm() {
   alarm.pause();
+  alarm.currentTime = 0;
 }
 
 function resumeCountdown() {
@@ -263,7 +260,9 @@ function resumeCountdown() {
 function stopCountdown() {
   countdown.stop();
   ticking.pause();
+  ticking.currentTime = 0;
   alarm.pause();
+  alarm.currentTime = 0;
 }
 
 function pauseCountdown() {
