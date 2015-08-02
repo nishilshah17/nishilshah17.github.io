@@ -106,7 +106,7 @@ function nextPick(teams, owners, phones, players, playerTeams, playerPositions) 
       draftActive = false;
       lastPick = true;
     }
-    if(announce.indexOf(players[counter-1]) < 0) {
+    if(announced.indexOf(players[counter-1]) < 0) {
       announced.push(players[counter-1]);
       toppp = [];
       document.getElementById('pickin').style.zIndex = 2000;
