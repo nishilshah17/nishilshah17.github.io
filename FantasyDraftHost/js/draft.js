@@ -226,6 +226,7 @@ function initiateCountdown() {
         var currentValue = countdown.msToTime(countdown.lap());
         var currentValueInt = parseInt(currentValue.replace(":",""));
         if(currentValueInt != 500 && currentValueInt % 30 == 0 && currentValueInt > 30) {
+          alert("coming here");
           document.getElementById('timer').style.zIndex = -1000;
           setTimeout(showCountdown, 24000);
         }
