@@ -433,6 +433,9 @@ function checkMessages(timeIsOut) {
       fromPhone = fromPhone.substring(2); //remove the +1 from the phone number
       var playerPicked = messageData.messages[i].body;
       if(fromPhone == currentPhone && validPlayer(playerPicked, messageData.messages[i].sid)) {
+        if(pickedPlayer == "Adrian Peterson") {
+          pickedPlayerTeam = "MIN";
+        }
         repeat = false;
         var pickRef = new Firebase("https://fantasy-draft-host.firebaseio.com/drafts/"+draftID+"/picks/"+currentPick);
         pickRef.update({
