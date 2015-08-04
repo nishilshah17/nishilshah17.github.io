@@ -219,8 +219,6 @@ $(document).ready(function() {
 
 function initiateCountdown() {
 
-  document.getElementById('timer').style.zIndex = -1000;
-
   countdown = Tock({
       countdown: true,
       interval: 50,
