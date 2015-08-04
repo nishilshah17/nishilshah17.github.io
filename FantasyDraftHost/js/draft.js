@@ -378,6 +378,7 @@ function playPlayerHighlightReel() {
     document.getElementById('playerHighlights').style.zIndex = 4000;
   } else {
     if(!lastPick) {
+      document.getElementById('timer').style.zIndex = -1000;
       setTimeout(initiateCountdown, 1750);
     }
   }
@@ -390,6 +391,7 @@ $("video").on("error", function() {
 })
 
 function videoEnded() {
+  document.getElementById('timer').style.zIndex = -1000;
   document.getElementById('playerHighlights').style.zIndex = -4000;
   if(draftActive) {
     setTimeout(initiateCountdown,1750);
