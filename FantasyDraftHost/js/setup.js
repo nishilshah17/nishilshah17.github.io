@@ -4,14 +4,12 @@ var authToken;
 var twilioNumber;
 
 var userID = localStorage.getItem('uid');
-alert(userID);
 var userRef = new Firebase("https://fantasy-draft-host.firebaseio.com/users/"+userID);
 
 userRef.once('value', function(userSnapshot) {
   accountSID = userSnapshot.child('accountSID').val();
   authToken = userSnapshot.child('authToken').val();
   twilioNumber = userSnapshot.child('number').val();
-  alert(accountSID);
 });
 
 for(var i = 0; i < 20; i++) {
