@@ -48,7 +48,7 @@ $(document).ready(function() {
   var draftsRef = new Firebase("https://fantasy-draft-host.firebaseio.com/drafts");
   var userRef = new Firebase("https://fantasy-draft-host.firebaseio.com/users/"+userID);
 
-  draftsRef.once('value', function(draftsSnapshot) {
+  draftsRef.on('value', function(draftsSnapshot) {
     $('#draftList').empty();
     var draftListTable = $("<table cellpadding='20'></table>");
     draftListTable.attr('id','draftListTable');
