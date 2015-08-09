@@ -58,6 +58,7 @@ $('#submitButton').click(function () {
       url: 'https://api.twilio.com/2010-04-01/Accounts/'+accountSID+'/Messages.json',
       type: 'post',
       dataType: 'json',
+      async: false,
       data: {
         "To": phones[i],
         "From": twilioNumber,
