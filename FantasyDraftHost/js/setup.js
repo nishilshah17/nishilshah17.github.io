@@ -52,6 +52,8 @@ $('#submitButton').click(function () {
   }
 
   for(var i = 0; i < phones.length; i++) {
+    alert(i);
+    alert(phones[i]);
     $.ajax({
       url: 'https://api.twilio.com/2010-04-01/Accounts/'+accountSID+'/Messages.json',
       type: 'post',
