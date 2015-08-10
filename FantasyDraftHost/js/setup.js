@@ -122,6 +122,9 @@ function sendWelcome(to) {
       alert(to);
     },
     success: function(data) {
+    },
+    error: function(xhr, status, error) {
+      alert(xhr.responseText);
     }
   });
 }
