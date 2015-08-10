@@ -119,12 +119,8 @@ function sendWelcome(to) {
     },
     beforeSend: function(xhr) {
       xhr.setRequestHeader('Authorization',make_base_auth(accountSID,authToken));
-      alert(to);
     },
     success: function(data) {
-    },
-    error: function(xhr, status, error) {
-      alert(xhr.responseText);
     }
   });
 }
