@@ -72,6 +72,9 @@ $('#submitButton').click(function () {
         ownerName = owners[owners.length-1-j];
         phoneNumber = phones[phones.length-1-j];
       }
+      phoneNumber = phoneNumber.replace(/\s+/g, '');
+      phoneNumber = phoneNumber.replace(/\(|\)/g,'');
+      phoneNumber = phoneNumber.replace(/-/g, "");
       allPicks += '"'+currentPick+'": ';
         allPicks += '{ "team": "'+teamName+'", "owner": "'+ownerName+'", "phone": "'+phoneNumber+'", "player": "null", "playerTeam": "null", "playerPosition": "null"}';
       if((i+1) == numRounds && (j+1) == numTeams) {
