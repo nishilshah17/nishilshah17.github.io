@@ -160,14 +160,13 @@ $('#submitButton').click(function () {
     phoneNumber = phoneNumber.replace(/\s+/g, '');
     phoneNumber = phoneNumber.replace(/\(|\)/g,'');
     phoneNumber = phoneNumber.replace(/-/g, "");
-    allPicks += '"'+pickCounter+'": ';
+    allPicks += '"'+currentPick+'": ';
       allPicks += '{ "team": "'+teamName+'", "owner": "'+ownerName+'", "phone": "'+phoneNumber+'", "player": "'+keeper+'", "playerTeam": "null", "playerPosition": "'+position+'"}';
     if(i+1 < draftOrder.length) {
       allPicks += ",";
     }
   }
   allPicks += "}";
-  alert(allPicks);
   var allPicks = JSON.parse(allPicks);
 
   //send data to firebase
