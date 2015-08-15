@@ -529,6 +529,8 @@ function getPositionColor(position) {
       return "FFAEEA";
     case "DEF":
       return "FF3F5A";
+    case "keeper":
+      return "5AFFC8";
     default:
       return "FFFF91";
   }
