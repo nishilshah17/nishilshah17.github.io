@@ -275,7 +275,7 @@ function nextPick(teams, owners, phones, players, playerTeams, playerPositions) 
 
   if(counter > 0 && !firstInstance) {
     var tempCounter = counter-1;
-    while(playerPositions[counter-1] == "keeper") {
+    while(playerPositions[tempCounter] == "keeper") {
       tempCounter--;
     }
     if(tempCounter >= 0) {
