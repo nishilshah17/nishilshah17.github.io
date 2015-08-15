@@ -138,7 +138,7 @@ $('#submitButton').click(function () {
   var allPicks = "{";
   for(var i = 0; i < draftOrder.length; i++) {
     var currentPick = (i+1);
-    var currentPicker = draftOrder[i];
+    var currentPicker = draftOrder[i]-1;
     var teamName;
     var ownerName;
     var phoneNumber;
