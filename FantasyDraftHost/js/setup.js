@@ -162,9 +162,7 @@ $('#submitButton').click(function () {
     phoneNumber = phoneNumber.replace(/-/g, "");
     allPicks += '"'+pickCounter+'": ';
       allPicks += '{ "team": "'+teamName+'", "owner": "'+ownerName+'", "phone": "'+phoneNumber+'", "player": "'+keeper+'", "playerTeam": "null", "playerPosition": "'+position+'"}';
-    if((i+1) == numRounds && (j+1) == numTeams) {
-      //do nothing
-    } else {
+    if(i < draftOrder.length) {
       allPicks += ",";
     }
   }
