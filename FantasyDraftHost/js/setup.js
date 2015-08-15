@@ -167,6 +167,7 @@ $('#submitButton').click(function () {
     }
   }
   allPicks += "}";
+  alert(allPicks);
   var allPicks = JSON.parse(allPicks);
 
   //send data to firebase
