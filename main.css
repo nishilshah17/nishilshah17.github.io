@@ -30,12 +30,13 @@
 
 .portfolioItem {
   width: 100%;
-  height: 16.666666667%;
+  height: 14.2857%;
   visibility: hidden;
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
   cursor: hand;
+  border-left: black;
 }
 
 .portfolioItem:hover {
