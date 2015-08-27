@@ -1,3 +1,4 @@
+var portfolioItem0Color = 'white';
 var portfolioItem1Color = 'gray';
 var portfolioItem2Color = '#72bcd4';
 var portfolioItem3Color = '#2481d6';
@@ -7,6 +8,7 @@ var portfolioItem6Color = '#da3939';
 
 $('.logo').height($('.portfolioItem').height()/2);
 
+document.getElementById('portfolioItem0').style.backgroundColor = portfolioItem0Color;
 document.getElementById('portfolioItem1').style.backgroundColor = portfolioItem1Color;
 document.getElementById('portfolioItem2').style.backgroundColor = portfolioItem2Color;
 document.getElementById('portfolioItem3').style.backgroundColor = portfolioItem3Color;
@@ -15,8 +17,8 @@ document.getElementById('portfolioItem5').style.backgroundColor = portfolioItem5
 document.getElementById('portfolioItem6').style.backgroundColor = portfolioItem6Color;
 
 $(document).ready(function(){
-  for(var i = 0; i < 6; i++) {
-    var pI = 'portfolioItem'+(i+1);
+  for(var i = 0; i < 7; i++) {
+    var pI = 'portfolioItem'+(i);
     window.setTimeout(function(portfolioItem) {
       $('#'+portfolioItem).css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0},1000);
     }, (i+1)*300, pI);
