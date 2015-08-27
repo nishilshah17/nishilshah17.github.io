@@ -36,7 +36,6 @@
   vertical-align: middle;
   cursor: pointer;
   cursor: hand;
-  border-left: black;
 }
 
 .portfolioItem:hover {
@@ -51,6 +50,7 @@
 	font-variant: normal;
 	font-weight: 500;
 	line-height: 26px;
+  color: white;
 }
 
 .portfolioItemTitle {
