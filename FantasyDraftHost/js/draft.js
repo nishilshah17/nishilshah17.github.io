@@ -411,6 +411,7 @@ function checkMessages(timeIsOut) {
     } else {
       currentMessageID = 0;
     }
+    console.log(currentMessageID);
 
     for(var i = 0; i < messageData.messages.length; i++) {
       if(messageData.messages[i].sid == firstMessageID) {
@@ -464,6 +465,7 @@ function validPlayer(playerName, messageSID) {
   for (var i = 0; i < playerData.Players.length; i++) {
     if(playerData.Players[i].displayName.toUpperCase().split('.').join("") === playerName.toUpperCase().split('.').join("")) {
       valid = true;
+      console.log("valid player");
       pickedPlayer = playerData.Players[i].displayName;
       pickedPlayerTeam = playerData.Players[i].team;
       pickedPlayerPosition = playerData.Players[i].position;
