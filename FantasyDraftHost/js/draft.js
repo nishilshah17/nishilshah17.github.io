@@ -379,7 +379,7 @@ function videoEnded() {
 }
 
 function loadPlayerData() {
-  $.getJSON('NFLPlayerData.json', function(data) {
+  $.getJSON('/FantasyDraftHost/NFLPlayerData.json', function(data) {
     playerData = data;
   });
 }
