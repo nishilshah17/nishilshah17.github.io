@@ -379,7 +379,7 @@ function videoEnded() {
 }
 
 function loadPlayerData() {
-  $.getJSON('http://cors.io/?u=http://www.fantasyfootballnerd.com/service/players/json/63utcjcxdghw', function(data) {
+  $.getJSON('../NFLPlayerData.json', function(data) {
     playerData = data;
   });
 }
